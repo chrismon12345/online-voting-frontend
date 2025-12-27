@@ -13,3 +13,13 @@ export interface User {
   avatar?: string;
 }
 
+export interface Voter {
+  id: string;
+  name: string;
+  email: string;
+  avatar?: string;
+  votedAt: string;
+  candidateId: string;
+  candidateName: string;
+}
+

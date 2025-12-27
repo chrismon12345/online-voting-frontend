@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Info } from 'lucide-react';
 import Header from './Header';
 import CandidateCard from './CandidateCard';
+import VotersList from './VotersList';
 import { User } from '../types';
 import { mockCandidates } from '../data/mockData';
+import { mockVoters } from '../data/mockVoters';
 
 interface DashboardProps {
   user: User;
@@ -46,11 +48,16 @@ export default function Dashboard({ user, onLogout }: DashboardProps) {
         </div>
 
         {/* Info Badge */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-12">
           <div className="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-4 rounded-full shadow-lg">
             <Info className="w-5 h-5" />
             <span className="font-medium">Your vote is secure and anonymous</span>
           </div>
+        </div>
+
+        {/* Voters List */}
+        <div className="mt-12">
+          <VotersList voters={mockVoters} />
         </div>
       </main>
     </div>
